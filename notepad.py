@@ -17,7 +17,7 @@ file = None
 def New():
     global file
     pad.title("Untitled - Notepad")
-    file = None
+    file = Nonel
     textarea.delete(1.0,END)
 def Open():
     global file
