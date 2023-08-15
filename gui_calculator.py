@@ -5,102 +5,179 @@ from tkinter import messagebox as tmsg
 # Back-end Code
 
 
-num = ""
-operator = ""
+exp = ""
+opr = ""
+N1 = 0
 
 
 def zero():
-    global num
-    num += "0"
-    equation.set(num)
+    global exp
+    exp += "0"
+    equation.set(exp)
 
 
 def one():
-    global num
-    num += "1"
-    equation.set(num)
+    global exp
+    exp += "1"
+    equation.set(exp)
 
 
 def two():
-    global num
-    num += "2"
-    equation.set(num)
+    global exp
+    exp += "2"
+    equation.set(exp)
 
 
 def three():
-    global num
-    num += "3"
-    equation.set(num)
+    global exp
+    exp += "3"
+    equation.set(exp)
 
 
 def four():
-    global num
-    num += "4"
-    equation.set(num)
+    global exp
+    exp += "4"
+    equation.set(exp)
 
 
 def five():
-    global num
-    num += "5"
-    equation.set(num)
+    global exp
+    exp += "5"
+    equation.set(exp)
 
 
 def six():
-    global num
-    num += "6"
-    equation.set(num)
+    global exp
+    exp += "6"
+    equation.set(exp)
 
 
 def seven():
-    global num
-    num += "7"
-    equation.set(num)
+    global exp
+    exp += "7"
+    equation.set(exp)
 
 
 def eight():
-    global num
-    num += "8"
-    equation.set(num)
+    global exp
+    exp += "8"
+    equation.set(exp)
 
 
 def nine():
-    global num
-    num += "9"
-    equation.set(num)
+    global exp
+    exp += "9"
+    equation.set(exp)
 
 
 def decimal():
-    global num
-    num += "."
-    equation.set(num)
+    global exp
+    exp += "."
+    equation.set(exp)
 
 
 def add():
-    print("Hello")
+    global exp
+    global opr
+    global N1
+    N1 = float(exp)
+    exp += "+"
+    opr = "+"
+    equation.set(exp)
 
 
 def sub():
-    print("Hello")
+    global opr
+    global exp
+    global N1
+    N1 = float(exp)
+    exp += "-"
+    opr = "-"
+    equation.set(exp)
 
 
 def mul():
-    print("Hello")
+    global exp
+    global opr
+    global N1
+    N1 = float(exp)
+    exp += "x"
+    opr = "x"
+    equation.set(exp)
 
 
 def div():
-    print("Hello")
+    global exp
+    global opr
+    global N1
+    N1 = float(exp)
+    exp += '\u00F7'
+    opr = '\u00F7'
+    equation.set(exp)
 
 
 def equal():
-    print("Hello")
-
+    global N1
+    global opr
+    global exp
+    temp_exp = exp
+    if opr == "+":
+        var1 = float((temp_exp.split("+")[1]))
+        var2 = str(N1 + var1)
+        equation.set(var2)
+        exp = var2
+    elif opr == "-":
+        var1 = float((temp_exp.split("-")[1]))
+        var2 = str(N1 - var1)
+        equation.set(var2)
+        exp = var2
+    elif opr == "x":
+        var1 = float((temp_exp.split("x")[1]))
+        var2 = str(N1 * var1)
+        equation.set(var2)
+        exp = var2
+    elif opr == '\u00F7':
+        var1 = float((temp_exp.split('\u00F7')[1]))
+        if var1 == 0:
+            equation.set("Zero Division Error")
+            tmsg.showerror(":(", "Error")
+            N1 == ""
+            exp = ""
+        else:
+            var2 = float(N1 / var1)
+            temp = str(var2)
+            if len(temp.split(".")[1]) > 10:
+                equation.set("{:.10f}".format(var2))
+                exp = str(var2)
+            else:
+                equation.set(var2)
+                exp = str(var2)
+    elif opr == "^2":
+        var1 = float(temp_exp.split("^2")[0])
+        var2 = str(var1*var1)
+        equation.set(var2)
+        exp = var2
+    elif opr == "\u221A":
+        var1 = float(temp_exp.split("\u221A")[1])
+        var2 = str(var1**0.5)
+        equation.set(var2)
+        exp = var2
 
 def sqr():
-    print("Hello")
+    global opr
+    global exp
+
+    opr = "^2"
+    exp += "^2"
+    equation.set(exp)
 
 
 def undr():
-    print("Hello")
+    global exp
+    global opr
+    exp += "\u221A"
+    opr = "\u221A"
+    equation.set(exp)
 
 
 def opr1():
@@ -112,15 +189,29 @@ def opr2():
 
 
 def c_():
-    print("Hello")
+    global exp
+    exp = ""
+    equation.set(exp)
 
 
-def ce_():
-    print("Hello")
+def ac_():
+    global opr
+    global exp
+    global N1
+    exp = ""
+    opr = ""
+    N1 = 0
+    equation.set(exp)
 
 
 def del_():
-    print("Hello")
+    global exp
+    length = len(exp)
+    temp = ""
+    for i in range(length-1):
+        temp += exp[i]
+    exp = temp
+    equation.set(exp)
 
 
 def per():
@@ -167,7 +258,7 @@ btn2 = Button(cal, text="C", font="Times 19", height=1, width=5, command=c_, fg=
 btn2.place(x=177, y=155)
 changeOnHover(btn2, "#383838", "#282828")
 
-btn3 = Button(cal, text="CE", font="Times 19", height=1, width=5, command=ce_, fg="#ffffff", bg="#282828", bd=3)
+btn3 = Button(cal, text="AC", font="Times 19", height=1, width=5, command=ac_, fg="#ffffff", bg="#282828", bd=3)
 btn3.place(x=92, y=155)
 changeOnHover(btn3, "#383838", "#282828")
 
@@ -175,7 +266,7 @@ btn4 = Button(cal, text=chr(37), font="Times 19", height=1, width=5, command=per
 btn4.place(x=10, y=155)
 changeOnHover(btn4, "#383838", "#282828")
 
-btn5 = Button(cal, text=chr(247), font="Times 19", height=1, width=5, command=div, fg="#ffffff", bg="#282828", bd=3)
+btn5 = Button(cal, text='\u00F7', font="Times 19", height=1, width=5, command=div, fg="#ffffff", bg="#282828", bd=3)
 btn5.place(x=260, y=210)
 changeOnHover(btn5, "#383838", "#282828")
 
