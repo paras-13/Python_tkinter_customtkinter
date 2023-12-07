@@ -239,14 +239,14 @@ cal.maxsize(350, 500)                                           # Screen Max Siz
 
 cal.minsize(350, 500)                                           # Screen Min Size
 
-cal.wm_iconbitmap("calc.ico")                                # Calculator icon
+cal.wm_iconbitmap("D:\\Python\\Python Git\\Python_tkinter\\calc.ico")                                # Calculator icon
 
 equation = StringVar()
-Label(cal, text="Calculator", font="20px", fg="yellow", bg="black").place(x=120, y=15)
-Entry(cal, width=19, font="Calibri 25", textvariable=equation, justify=RIGHT,
+Label(cal, text="Calculator Standard", font=("Times", 17, "bold"), fg="yellow", bg="#101010").place(x=90, y=12)
+Entry(cal, width=19, font="Times 25", textvariable=equation, justify=RIGHT,
       bg="#101010", fg="white").place(x=11, y=100)
 
-photo = PhotoImage(file="clear.png")
+photo = PhotoImage(file="D:\\Python\\Python Git\\Python_tkinter\\clear.png")
 Label(cal, text="- By Paras Upadhyay", font="Calibri 8 bold italic", bg="#101010", fg="white").place(x=247, y=480)
 # Buttons
 
@@ -332,7 +332,7 @@ changeOnHover(btn19, "#282828", "#383838")
 
 btn20 = Button(cal, text="=", font="Times 19", height=1, width=5, command=equal, fg="#000", bg="#ff8257", bd=3)
 btn20.place(x=260, y=430)
-changeOnHover(btn20, "#ff9057", "#ff8257")
+changeOnHover(btn20, "#FF5733", "#ff8257")
 
 btn21 = Button(cal, text=".", font="Times 19", height=1, width=5, command=decimal, fg="#ffffff", bg="#282828", bd=3)
 btn21.place(x=177, y=430)
