@@ -90,3 +90,4 @@ Scrollbar.config(command=textarea.yview)
 textarea.config(yscrollcommand=Scrollbar.set)
 pad.mainloop()
 # m1.add_command(text="New")
+
