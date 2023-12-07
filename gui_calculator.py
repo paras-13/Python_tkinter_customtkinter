@@ -145,6 +145,7 @@ def equal():
             exp = ""
         else:
             var2 = float(N1 / var1)
+            var2 = round(var2, 10)
             temp = str(var2)
             if len(temp.split(".")[1]) > 10:
                 equation.set("{:.10f}".format(var2))
@@ -185,8 +186,11 @@ def opr1():
 
 
 def opr2():
-    print("Hello")
-
+    global exp
+    val = round(1/int(exp), 10)
+    val = str(val)
+    equation.set(val)
+    exp = val
 
 def c_():
     global exp
