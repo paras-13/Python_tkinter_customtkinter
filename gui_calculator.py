@@ -243,14 +243,14 @@ cal.maxsize(350, 500)                                           # Screen Max Siz
 
 cal.minsize(350, 500)                                           # Screen Min Size
 
-cal.wm_iconbitmap("D:\\Python\\Python Git\\Python_tkinter\\calc.ico")                                # Calculator icon
+cal.wm_iconbitmap("D:\\Python\\Python Git\\Python_tkinter_customtkinter\\calc.ico")                                # Calculator icon
 
 equation = StringVar()
 Label(cal, text="Calculator Standard", font=("Times", 17, "bold"), fg="yellow", bg="#101010").place(x=90, y=12)
 Entry(cal, width=19, font="Times 25", textvariable=equation, justify=RIGHT,
       bg="#101010", fg="white").place(x=11, y=100)
 
-photo = PhotoImage(file="D:\\Python\\Python Git\\Python_tkinter\\clear.png")
+photo = PhotoImage(file="D:\\Python\\Python Git\\Python_tkinter_customtkinter\\clear.png")
 Label(cal, text="- By Paras Upadhyay", font="Calibri 8 bold italic", bg="#101010", fg="white").place(x=247, y=480)
 # Buttons
 
