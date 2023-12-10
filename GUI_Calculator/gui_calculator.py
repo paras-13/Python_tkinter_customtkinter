@@ -76,7 +76,7 @@ def decimal():
     equation.set(exp)
 
 
-def add():
+def addition():
     global exp
     global opr
     global N1
@@ -86,7 +86,7 @@ def add():
     equation.set(exp)
 
 
-def sub():
+def subtract():
     global opr
     global exp
     global N1
@@ -96,7 +96,7 @@ def sub():
     equation.set(exp)
 
 
-def mul():
+def product():
     global exp
     global opr
     global N1
@@ -106,7 +106,7 @@ def mul():
     equation.set(exp)
 
 
-def div():
+def divison():
     global exp
     global opr
     global N1
@@ -164,7 +164,7 @@ def equal():
         equation.set(var2)
         exp = var2
 
-def sqr():
+def square():
     global opr
     global exp
     opr = "^2"
@@ -172,7 +172,7 @@ def sqr():
     equation.set(exp)
 
 
-def undr():
+def underoot():
     global exp
     global opr
     exp += "\u221A"
@@ -191,13 +191,13 @@ def opr2():
     equation.set(val)
     exp = val
 
-def c_():
+def clear():
     global exp
     exp = ""
     equation.set(exp)
 
 
-def ac_():
+def allClear():
     global opr
     global exp
     global N1
@@ -207,7 +207,7 @@ def ac_():
     equation.set(exp)
 
 
-def del_():
+def backSpace():
     global exp
     length = len(exp)
     temp = ""
@@ -217,7 +217,7 @@ def del_():
     equation.set(exp)
 
 
-def per():
+def percent():
     tmsg.showinfo("Info","Under Development...Sorry for incovenience")
 
 colors={
@@ -334,7 +334,7 @@ def buttons():
                 image=photo,
                 height=button_height,
                 width=button_width,
-                command=del_,
+                command=backSpace,
                 fg_color=colors["equal_fg_color"],
                 text_color=colors["button_txt_color"],
                 hover_color=colors["equal_hover_color"],
@@ -346,7 +346,7 @@ def buttons():
                 text="C",
                 font=("Times", 19),
                 height=button_height,
-                width=button_width, command=c_,
+                width=button_width, command=clear,
                 text_color=colors["button_txt_color"],
                 fg_color=colors["opr_fg_color"],
                 hover_color=colors["opr_hover_color"],
@@ -359,7 +359,7 @@ def buttons():
                 font=("Times", 19),
                 height=button_height,
                 width=button_width,
-                command=ac_,
+                command=allClear,
                 text_color=colors["button_txt_color"],
                 fg_color=colors["opr_fg_color"],
                 hover_color=colors["opr_hover_color"],
@@ -372,7 +372,7 @@ def buttons():
                 font=("Times", 19),
                 height=button_height,
                 width=button_width,
-                command=per,
+                command=percent,
                 text_color=colors["button_txt_color"],
                 fg_color=colors["opr_fg_color"],
                 hover_color=colors["opr_hover_color"],
@@ -385,7 +385,7 @@ def buttons():
                 font=("Times", 19),
                 height=button_height,
                 width=button_width,
-                command=div,
+                command=divison,
                 text_color=colors["button_txt_color"],
                 fg_color=colors["opr_fg_color"],
                 hover_color=colors["opr_hover_color"],
@@ -398,7 +398,7 @@ def buttons():
                 font=("Times", 19),
                 height=button_height,
                 width=button_width,
-                command=undr,
+                command=underoot,
                 text_color=colors["button_txt_color"],
                 fg_color=colors["opr_fg_color"],
                 hover_color=colors["opr_hover_color"],
@@ -411,7 +411,7 @@ def buttons():
                 font=("Times", 19),
                 height=button_height,
                 width=button_width,
-                command=sqr,
+                command=square,
                 text_color=colors["button_txt_color"],
                 fg_color=colors["opr_fg_color"],
                 hover_color=colors["opr_hover_color"],
@@ -436,7 +436,7 @@ def buttons():
                 font=("Times", 19), 
                 height=button_height,
                 width=button_width, 
-                command=mul,
+                command=product,
                 text_color=colors["button_txt_color"],
                 fg_color=colors["opr_fg_color"],
                 hover_color=colors["opr_hover_color"],
@@ -488,7 +488,7 @@ def buttons():
                 font=("Times", 19),
                 height=button_height,
                 width=button_width,
-                command=sub,
+                command=subtract,
                 text_color=colors["button_txt_color"],
                 fg_color=colors["opr_fg_color"],
                 hover_color=colors["opr_hover_color"],
@@ -540,7 +540,7 @@ def buttons():
                 font=("Times", 19),
                 height=button_height,
                 width=button_width,
-                command=add,
+                command=addition,
                 text_color=colors["button_txt_color"],
                 fg_color=colors["opr_fg_color"],
                 hover_color=colors["opr_hover_color"],
