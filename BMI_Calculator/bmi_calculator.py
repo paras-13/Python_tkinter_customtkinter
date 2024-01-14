@@ -164,21 +164,21 @@ ctk.CTkLabel(frame1,                                   # Age Label
 
 # Radio buttons for age
 ctk.CTkRadioButton(frame1,                                       # Below 20
-                   text=age[0], text_color="#e1ad01",
+                   text=Age[0], text_color="#e1ad01",
                    font=("Georgia", 15), value=Age[0],
                    variable=radio2, command=get_age,
                    radiobutton_width=15, radiobutton_height=15,
                    border_width_checked=4, border_width_unchecked=2,
                    border_color="#fff").place(x=120, y=45)
 ctk.CTkRadioButton(frame1,
-                   text=age[1], text_color="#e1ad01",             # Between 20 and 60
+                   text=Age[1], text_color="#e1ad01",             # Between 20 and 60
                    font=("Georgia", 15), value=Age[1],
                    variable=radio2, command=get_age,
                    radiobutton_width=15, radiobutton_height=15,
                    border_width_checked=4, border_width_unchecked=2,
                    border_color="#fff").place(x=120, y=70)
 ctk.CTkRadioButton(frame1,                                       
-                   text=age[2], text_color="#e1ad01",            # Above 60
+                   text=Age[2], text_color="#e1ad01",            # Above 60
                    font=("Georgia", 15), value=Age[2],
                    variable=radio2, command=get_age,
                    radiobutton_width=15, radiobutton_height=15,
